@@ -84,19 +84,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
-    ],
-
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'core.bearer.BearerTokenAuthentication',
     ],
 }
-
-SIMPLE_JWT = {
-   "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
-   "AUTH_HEADER_TYPES": ("Bearer",),
-} 
 
 LANGUAGE_CODE = "ru"
 
