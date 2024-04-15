@@ -4,6 +4,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from core import views
+from core.auth import CustomObtainAuthToken
 from help_prav_server import settings
 
 router = routers.DefaultRouter()
@@ -16,7 +17,8 @@ urlpatterns = [
     path("api/", include(router.urls)),
     path("api/wallet/", views.WalletView.as_view()),
     path("api/profile/", views.UserProfileView.as_view()),
-    path("auth/", include("djoser.urls.jwt")),
+    path('login/', CustomObtainAuthToken.as_view()),
+    path('api-auth/', include('rest_framework.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
