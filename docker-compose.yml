@@ -38,6 +38,7 @@ services:
       sh ./dev.start.sh
     volumes:
       - ./web/backend:/usr/backend
+      - ./dist:/usr/backend/dist
     env_file:
       - ./web/.env
     depends_on:
