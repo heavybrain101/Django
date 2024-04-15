@@ -35,7 +35,7 @@ services:
       dockerfile: Dockerfile
     container_name: django
     command:
-      sh ./dev.start.sh
+      sh ./start.sh
     volumes:
       - ./web/backend:/usr/backend
       - ./dist:/usr/backend/dist
