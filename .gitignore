@@ -2,3 +2,4 @@
 postgres_data
 web/.env
 .idea
+rconfig.yml
